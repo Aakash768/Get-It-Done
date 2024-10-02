@@ -23,4 +23,4 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/get-it-done.git
+   git clone https://github.com/Aakash768/Get-It-Done
