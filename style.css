@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sofadi One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+:root{
+    --btn-bg: #000;
+    --btn-color: #cbcbcb;
+    --btn-color-hover: #fff;
+}
+nav{
+    
+    background-color: black;;
+}   
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+}
+.title{
+    display: flex;
+   
+    background-color: none;
+    color: white;
+    letter-spacing: 10px;
+    font-family: 'Sofadi One';
+    font-weight: bold;
+    font-size:20px;
+
+}
+.ri-task-fill{
+    font-size: 30px;
+    text-shadow: 1px 1px 1px red;
+    animation: spin 3s infinite linear;
+}
+
+@keyframes spin{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    
+
+}
+
+.main-section{
+    position: relative;
+    display: grid;
+    
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+    
+
+    width: 800px;
+    height:650px;
+}
+
+.task-section{
+    margin-top: 5px;
+    background-color: rgb(27, 23, 24);
+    width:700px;
+    height: 200px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+
+}
+/*  */
+.input-box{
+    margin-top: 20px;
+    display: grid;
+    
+    
+}
+
+#input-section{
+    width:500px;
+    height: 50px;
+    border-radius: 60px;
+    border: 2px white bold;
+}
+
+#add-btn{
+    
+    background: var(--btn-bg);
+    margin-left: 200px;
+    margin-top: 20px;
+    width: 100px;
+    height:50px;
+    border-radius:10px;
+    font-size: 30px;
+    color: var(--btn-color);
+    border-image:  linear-gradient(115deg, #eeaf61,#fb9062,#ee5d6c, #ce4993, #6a0d83);
+    border-image-slice: 1;
+    cursor: pointer;
+      
+}
+
+#add-btn:hover {
+    background: linear-gradient(235deg, #000, #444); /* Black to dark gray */
+}
+
+
+::placeholder{
+    font-size: 20px;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+.list-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: black;
+    border-top-left-radius: 10;
+    width: 700px;
+    height: 420px;
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+    padding: 10px;
+}
+.list-section::before {
+    content: "";
+    position: absolute;
+    top: 215px;
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Align the center of the circle */
+    width: 300px; /* Adjust width for the desired size of the concave effect */
+    height: 10px; /* Adjust height as needed */
+    background-color: white; /* Same as background to create the cutout */
+    border-radius: 0 0 100px 100px; /* Bottom half-circle */
+    z-index: 1;
+}
+
+
+
+
+.list {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px; /* Space between checkbox and text */
+}
+
+.custom-checkbox input {
+    display: none; /* Hide the default checkbox */
+}
+
+.checkmark {
+    width: 20px; /* Size of the custom checkbox */
+    height: 20px; /* Size of the custom checkbox */
+    border: 2px solid #333; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    position: relative; /* For positioning the checkmark */
+    transition: background-color 0.3s;
+}
+
+.custom-checkbox:hover .checkmark {
+    background-color: #f0f0f0; /* Light background on hover */
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: #333; /* Background color when checked */
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: ''; /* Creates the checkmark */
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Color of checkmark */
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.list-item-text {
+    margin-left: 0px;
+    width:600px; /* Allow text to take up available space */
+    
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    overflow-y: hidden;
+    /* text-overflow:clip; Adds '...' for overflowed text */
+    scrollbar-width: none;
+    text-decoration: none;
+}
+
+
+
+
+.delete-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent the delete icon from shrinking */
+}
+
+.delete-icon i {
+    font-size: 24px;
+    color: red;
+}
+
+
+
